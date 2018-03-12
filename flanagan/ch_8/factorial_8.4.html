@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Example_8.4</title>
+	<script>
+		// Вычисляет факториалы и сохраняет результаты в собственных свойствах.
+		function factorial(n) {
+			if (isFinite(n) && n>0 && n==Math.round(n)) { // Только конечные положительные целые
+				if (!(n in factorial)) // Если не сохранялось ранее
+					factorial[n] = n * factorial(n-1); // Вычислить и сохранить
+				return factorial[n]; // Вернуть сохр. результат
+			}
+			else return NaN; // Для ошибочного аргумента
+		}
+		factorial[1] = 1; // Инициализировать кэш базовым случаем.
+	</script>	
+</head>
+<body>
+</body>
+</html>
