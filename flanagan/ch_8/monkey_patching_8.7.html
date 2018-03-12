@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Example_8.7.3</title>
+	<script>
+		// Замещает метод m объекта o версией метода, которая регистрирует
+        // сообщения до и после вызова оригинального метода.
+        function trace(o, m) {
+            var original = o[m];                              // Сохранить оригинальный метод в замыкании.
+            o[m] = function() {                               // Определить новый метод.
+                console.log(new Date(), "Entering:", m);      // Записать сообщение.
+                var result = original.apply(this, arguments); // Вызвать оригинал.
+                console.log(new Date(), "Exiting:", m);       // Записать сообщение.
+                return result;                                // Вернуть результат.
+            };
+        }
+	</script>	
+</head>
+<body>
+</body>
+</html>
