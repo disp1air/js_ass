@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function () {
+            var x = 1,
+                y = 2;    
+        }());
+
+        console.log(x); // Uncaught ReferenceError: x is not defined
+        console.log(y);
+    </script>
+</body>
+</html>
