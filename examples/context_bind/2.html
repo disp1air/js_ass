@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myapp = {};
+            myapp.color = "green";
+            myapp.paint = function () {
+                console.log(this);
+            };
+
+        var findNodes = function (callback) {
+            console.log(this);
+            if (typeof callback === "function") {
+            callback();
+            }
+        };
+
+        findNodes(myapp.paint);
+        findNodes(myapp.paint.call(myapp));
+    </script>
+</body>
+</html>
