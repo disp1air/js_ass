@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const greeting = function(greet) {
+            return function(name) {
+                console.log(greet + ", " + name);
+            }
+        }
+
+        const goodDayToName = greeting('Good day');
+        goodDayToName("Amy");
+        goodDayToName("Ann");
+    </script>
+</body>
+</html>
