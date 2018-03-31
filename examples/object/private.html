@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(name) {
+            //private property
+            const secret = 'secret';
+
+            this.name = name;
+            
+            this.getName = function() {
+                return name;
+            };
+
+            this.getSecret = function() {
+                return secret;
+            }
+        }
+
+        student = new Student('Nadya');
+
+        console.log(student.name);
+        console.log(student.secret);  // undefined
+        console.log(student.getSecret());
+    </script>
+</body>
+</html>
