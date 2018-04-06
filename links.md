@@ -1,3 +1,6 @@
+https://github.com/yangshun/front-end-interview-handbook  
+https://techrocks.ru/2018/03/03/front-end-interview-tutorial/
+
 ### Асинхронные скрипты: defer/async  
 https://learn.javascript.ru/external-script  
 https://habrahabr.ru/company/dataart/blog/304138/  
@@ -17,6 +20,9 @@ https://htmlacademy.ru/
 https://developer.mozilla.org/ru/docs/Web/HTML/Element/title   https://developer.mozilla.org/ru/docs/Web/HTML/Element/link  
 http://www.webpagesdesign.ru/teg-link.html  
 
+### meta  
+https://developer.mozilla.org/ru/docs/Web/HTML/Element/meta  
+
 ### Alternative style sheets  
 https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets
 
@@ -30,3 +36,6 @@ https://developer.mozilla.org/ru/docs/Learn/HTML/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%
 
 ### markdown syntax  
 https://github.com/OlgaVlasova/markdown-doc  
+
+### others
+https://bitsofco.de/how-display-contents-works/
