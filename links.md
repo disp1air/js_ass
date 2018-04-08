@@ -27,7 +27,8 @@ https://developer.mozilla.org/ru/docs/Web/HTML/Element/meta
 https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets
 
 ### link rel="preload"  
-https://w3c.github.io/preload/ https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content  https://www.searchengines.ru/ispolzovanie-preload-prefetch-i-preconnect.html  http://prgssr.ru/development/dlya-chego-stoit-ispolzovat-predzagruzku.html https://ymatuhin.ru/front-end/html5-link-prefetch/ https://habrahabr.ru/post/338840/ https://www.methodlab.ru/articles/preload_speedup
+https://w3c.github.io/preload/  
+https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content  https://www.searchengines.ru/ispolzovanie-preload-prefetch-i-preconnect.html  http://prgssr.ru/development/dlya-chego-stoit-ispolzovat-predzagruzku.html https://ymatuhin.ru/front-end/html5-link-prefetch/ https://habrahabr.ru/post/338840/ https://www.methodlab.ru/articles/preload_speedup
 
 ### Загрузка документа: DOMContentLoaded, load, beforeunload, unload  
 https://learn.javascript.ru/onload-ondomcontentloaded  
