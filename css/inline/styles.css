@@ -1,0 +1,26 @@
+p {
+    padding : 1em;
+    border  : 1px solid black;
+}
+  
+span {
+    border  : 1px solid green;
+    /* That makes the box visible, regardless of its type */
+    background-color: yellow;
+}
+  
+.inline {
+    display: inline;
+    width: 350px;
+    height: 70px;
+}
+.block {
+    display: block;
+    width: 350px;
+    height: 70px;
+}
+.inline-block {
+    display: inline-block;
+    width: 350px;
+    height: 70px;
+}
