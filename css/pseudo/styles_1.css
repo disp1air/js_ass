@@ -1,0 +1,9 @@
+.exciting-text::after {
+    content: "<- теперь это *просто* потрясающе!"; 
+    color: green;
+  }
+  
+  .boring-text::after {
+     content: "<- СКУЧНО!";
+     color: red;
+  }
