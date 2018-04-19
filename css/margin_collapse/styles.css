@@ -1,0 +1,19 @@
+#parent{
+  background-color:yellow; 
+  width:300px;
+}
+#red {
+  background-color:red; 
+  height:50px; 
+}
+#blue {
+  background-color:blue; 
+  height:50px; 
+  margin-top: 30px;
+  padding: 1px;
+}
+
+#blue p {
+  margin-top: 20px;
+  background: green;
+}
