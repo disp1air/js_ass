@@ -1,0 +1,8 @@
+.skew {
+  width: 300px;
+  height: 140px;
+  background: yellow;
+  border: 3px solid black;
+  margin: 200px;
+  transform: skew(45deg, -45deg)
+}
