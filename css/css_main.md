@@ -96,3 +96,12 @@ CSS имеет встроенный способ привязки внешних
 
 !!!???Процентные значения в свойстве высоты height работают точно так же, но расчет базируется на высоте элемента-контейнера, а не на его ширине.  
 
+### Наследование стилей. Свойства inset, initial, inherit  
+Значение **initial** применяется для установки исходного значения свойства. Может восстановить значения свойств, заданных браузером по умолчанию или задать начальное значение свойства, измененное в результате наследования.  
+
+**inherit** - ключевое слово, которое сообщает, что необходимо наследовать значение свойства у родительского элемента. Естественно, результат будет заметен только в том случае, если у родителя указанное свойство установлено.  
+
+The unset CSS keyword resets a property to its inherited value if it inherits from its parent, and to its initial value if not. In other words, it behaves like the inherit keyword in the first case, and like the initial keyword in the second case.  
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/unset  
+

@@ -1,0 +1,30 @@
+body {
+  background-color: #eaeaea;
+  display: flex;
+}
+
+.module {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: red;
+  font-family: Helvetica;
+  font-size: 18px;
+  padding: 20px;
+  width: 50%;
+}
+
+.inherit {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.initial {
+  color: initial;
+  font-family: initial;
+  font-size: initial;
+}
+
+.initial h1 {
+  color: initial;
+}
