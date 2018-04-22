@@ -1,0 +1,21 @@
+.wrapper {
+  margin: 100px;
+}
+
+.first_float {
+  float: left;
+  font-size: 36px;
+  background-color: yellowgreen;
+}
+
+.second_float {
+  float: left;
+  background-color: rebeccapurple;
+}
+
+.multicol {
+  background-color: peru;
+  column-count: 3;
+  column-gap: 20px;
+  column-rule: 2px dotted black;
+}
