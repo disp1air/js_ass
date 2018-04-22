@@ -1,0 +1,11 @@
+.navButton {
+  background-color: orange;
+  width: 300px;
+  height: 70px;
+  transition-property: all;
+  transition-duration: 2s;
+}
+
+.navButton:hover {
+  background-color: blue;
+}
