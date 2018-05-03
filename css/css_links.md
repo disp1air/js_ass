@@ -29,3 +29,6 @@ http://gearmobile.github.io/css/css-sass-less-stylus/
 https://htmlacademy.ru/blog/8-is-it-expensive-to-progressive-enhancement  
 https://htmlacademy.ru/blog/7-progressive-enhancement  
 https://htmlacademy.ru/blog/6-graceful-degradation  
+
+### вертикальное выравнивание  
+https://habr.com/company/netcracker/blog/277433/  
