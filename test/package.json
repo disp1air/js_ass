@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha fib.test.js"
+    "test": "mocha promises.test.js"
   },
   "author": "",
   "license": "ISC",
