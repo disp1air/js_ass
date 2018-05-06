@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const browsers = ['Chrome', 'Firefox', , 'Edge', , 'Safari', 'Opera'];
+
+    for(let index in browsers) {
+      console.log(index + " - " + browsers[index]);
+    }
+
+    console.log(browsers.length + '-------------------------');
+
+    for(let browser of browsers) {
+      console.log(browser);
+    }
+
+    console.log(browsers.length + '-------------------------');
+
+    browsers.forEach((browser, index) => {
+      console.log(index + ' - ' + browser);
+    });
+  </script>
+</body>
+</html>
