@@ -45,3 +45,6 @@ https://github.com/OlgaVlasova/markdown-doc
 
 ### others
 https://bitsofco.de/how-display-contents-works/
+
+### замеры времени выполнения функции  
+https://habr.com/company/mailru/blog/272087/  
