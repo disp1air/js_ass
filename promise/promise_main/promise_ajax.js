@@ -1,17 +1,3 @@
-// https://api.themoviedb.org/3/search/movie?api_key=4f7821834291015d1ed75fbd1dab475b&query=love
-
-// function loadData() {
-//   console.log('load data');
-  
-//   let promise = new Promise((resolve, reject) => {
-//     fetch('https://api.themoviedb.org/3/search/movie?api_key=4f7821834291015d1ed75fbd1dab475b&query=love')
-//       .then(data => resolve(data))
-//       .catch(error => console.error(error))
-//   });
-
-//   return promise;
-// }
-
 function loadData() {
   console.log("...load data");
 
@@ -38,6 +24,6 @@ function loadData() {
 }
 
 loadData()
-  .then(data => console.log(data))
+  .then(data => console.log(JSON.parse(data).value.joke))
   .catch(error => console.log(error))
 
