@@ -1,0 +1,25 @@
+.first {
+    width: 200px;
+    height: 50px;
+    background-color: red;
+}
+
+.second {
+    width: 200px;
+    height: 50px;
+    background-color: green;
+    visibility: hidden;
+}
+
+.third {
+    width: 200px;
+    height: 50px;
+    background-color: blue;
+    display: none;
+}
+
+.last {
+    width: 200px;
+    height: 50px;
+    background-color: red;
+}
