@@ -1,6 +1,7 @@
 https://learn.javascript.ru/symbol  
 https://habr.com/company/ruvds/blog/359004/  
 https://habr.com/post/255137/  
+https://proglib.io/p/simple-js-concepts/  
 
 Новый **примитивный тип данных** Symbol служит для создания уникальных идентификаторов. Создание осуществляется не как new Symbol(), а просто Symbol(), так как это – примитив.  
 
@@ -43,3 +44,27 @@ Symbol.keyFor(sym) - позволяет получить по глобально
  Symbol.keyFor работает только для глобальных символов, для остальных будет возвращено undefined
 
 В ES5 свойства объектов должны быть строками, в ES6 свойства объектов могут быть либо строками, либо Symbol 
+
+                  const mySymbol = Symbol('some car');
+                  const myObject = { name: 'bmw' };
+
+                  myObject[mySymbol] = 'This is a car';
+
+                  console.log(myObject[mySymbol]); // 'This is a car'
+
+Доступ к свойствам, представленным символами, можно получить только через квадратные скобки, точку использовать нельзя.
+
+                  let myCar = {name: 'BMW'};
+                  
+                  let type = Symbol('store car type');
+                  myCar[type] = 'a_sedan';
+                  
+                  let honk = Symbol('store honk function');
+                  myCar[honk] = () => 'honk';
+                  
+                  myCar.type; // => ошибка
+                  myCar[type]; // => 'store car type'
+                  
+                  myCar.honk(); // => ошибка
+                  myCar[honk](); // => 'honk'  
+
