@@ -1,31 +1,118 @@
-Если у объекта есть встроенный итератор, то обратиться к нему можно так:
+В javascript существует много структур которые предоставляют итератор:
+ - String;
+ - Array;
+ - Set;
+ - Map;
+ - NodeList;
+ - arguments;
 
-                    const data = [41, 42, 43];
-                    const itrObj = data[Symbol.iterator]()
+Итерируемый объект всего лишь имеет один метод, который позволяет нам получить итератор и дальше с этим итератором мы можем работать. Итератор - объект, но у этого объекта уже есть итерационное состояние. У каждого итератора есть метод next() для получения следующего элемента из коллекции. Метод next() возвращает специальный объект - минимальное кол-во свойств которого value, done но может быть и больше свойств.
+
+В спецификации сказано, что у объектов необходимо создать свойство Symbol.iterator, и это свойство должно быть функцией, которая вернет нам итератор.
+
+Если у объекта есть встроенный итератор, то получить его можно так: 
+
+                        const data = [41, 42, 43];
+                        const itrObj = data[Symbol.iterator]()
 
 Если для одного объекта вызвать несколько итераторов, то работать они будут отдельно друг от друга.
 
-                    const data = [41, 42, 43];
-                    const itrObj1 = data[Symbol.iterator]();
-                    const itrObj2 = data[Symbol.iterator]();
-                    console.log(itrObj1 === itrObj2);  
+                        const data = [41, 42, 43];
+                        const itrObj1 = data[Symbol.iterator]();
+                        const itrObj2 = data[Symbol.iterator]();
+                        console.log(itrObj1 === itrObj2);  
 
-Для строк отличие for от итераторов – в работе с юникод строками(for некорректно работает с юникод строками) Итераторы также используются в for of => for of тоже корректно работает со строчками.
+Для строк отличие for от итераторов – в работе с юникод строками(for некорректно работает с юникод строками)
+Итераторы также используются в for of(т.е. for of поддерживает итерируемый протокол) => for of тоже корректно работает со строчками. Использует итератор по умолчанию. Если применить for of к неитерируемому объекту, то будет ошибка(TypeError: ... is not iterable)
 
 WeakSet не итерируемый по умолчанию.
 
-                function isIterable(object) {
-                    return typeof object[Symbol.iterator] === 'function';
-                }
+                    function isIterable(object) {
+                        return typeof object[Symbol.iterator] === 'function';
+                    }
 
-                isIterable(new Set()) // true
-                isIterable(new WeakSet()) // false
-Collections:
+                    isIterable(new Set()) // true
+                    isIterable(new WeakSet()) // false
+
+Collections(в javascript есть 3 коллекции):
  - Array;
  - Set;
  - Map;
 
-Collections iterators:
- - entries();
- - values();
- - keys();
+Collections iterators(у коллекций есть методы, эти методы возвращают итераторы.):
+ - entries() - возвращает итератор, который итерируется по парам "ключ - значение". Здесь уже не будет свойств "values" и "done";
+ - values() - возвращает итератор, который итерируется по значениям;
+ - keys() - возвращает итератор, который итерируется по ключам;
+
+У стандартных объектов этих методов нет, т.к. стандартные объекты не являются итерируемыми.
+
+**Для массивов и множеств(sets) при использовании for of метод работает values() по умолчанию**
+
+**Для Map возвращается итератор по умолчанию entries()**  
+
+Т.к. NodeList не коллекция то и методов(entries, values, keys) у него нету.
+
+стандартные объекты не являются итерируемыми, но их можно сделать таковыми.
+
+### Spread operator, Array.from(), for-of при работк с итераторами  
+spread оператор использует дефолтный итератор. Применяется к множеству или массиву и разворачивает этот объект
+
+### iterable iterators
+Все встроенные итераторы являются итерируемыми.
+
+                            const arr = [1, 2];
+                            const iterator = arr[Symbol.iterator]();
+
+                            for (const v of iterator) {
+                                console.log(v);  // 1
+                                break;
+                            }
+
+                            for (const v of iterator) {
+                                console.log(v);  // 2
+                            }
+
+В данном случае итератор один. В первом for of он закончился, а во втором мы продолжили его работу, следовательно и вывелось 2
+
+### return and throw in iterators  
+У итераторов есть обязательный метод next(), но также могут быть необязательные методы return и throw.
+
+Есть два способа остановить итератор:
+ - когда закончились значения;
+ - вызвать метод return
+
+В большинстве встроенных итераторов нет ни метода return ни метода throw:  
+
+                            const message = 'Awesome message';
+                            const itrObj = message[Symbol.iterator]();
+
+                            console.log(itrObj.return);  // undefined
+                            console.log(itrObj.throw);   // undefined
+
+Но их можно добавить:  
+
+                            const fib = {
+                              ...
+                              [Symbol.iterator]() {
+                                return {
+                                  [Symbol.iterator]() {},
+                                  next() {},
+                                  return(v) {
+                                    return {
+                                      value: v,
+                                      done: true
+                                    };
+                                  }
+                                }
+                              }
+                            }
+
+                            for (let v in fib) {
+                              console.log(v);
+                              if (v > 3) break; // the same for throw, return, outer for-of continue
+                            }
+
+return полезно использовать в том случае, когда есть условие выхода из for-of(т.е. если есть условие выхода, то срабатывает этот return)  
+
+### Asynchronous Iterables  
+Чтобы создать асинхронный итератор, то необходимо использовать метод, который будет находиться в свойстве [Symbol.asyncIterator] и данный метод возвращает асинхронный итератор. Он отличается тем, что асинхронный итератор с помощью метода next() возвращает не объект({value, done}), а возвращает promise этого объекта.
